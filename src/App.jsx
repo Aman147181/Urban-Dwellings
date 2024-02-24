@@ -5,6 +5,7 @@ import HotDeals from './components/HotDeals'
 import AboutUs from './components/AboutUs'
 import Sidebar from './components/Sidebar'
 import Newsletter from './components/Newsletter'
+import Testimonial from './components/Testimonial'
 
 const App = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -20,6 +21,7 @@ const App = () => {
       <section id="about">
       <AboutUs/>
       </section>
+      <Testimonial/>
       <Newsletter/>
      
     </div>

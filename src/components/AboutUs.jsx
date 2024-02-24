@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="w-full pt-16 px-5 sm:px-12 md:px-16 lg:px-20">
-      <div className="grid grid-cols-1 gap-12 xl:gap-20  xl:grid-cols-2">
+    <div className="w-full py-16 px-5 sm:px-12 md:px-16 lg:px-20">
+      <div className="grid grid-cols-1 gap-12 xl:gap-20  lg:grid-cols-2">
         <div className="col-span-1 flex flex-col space-y-5">
           <h1 className="text-4xl font-medium font-volkhov text-[#254D4D]">About Us</h1>
           <h1 className="text-xl text-[#254D4D]  font-roboto">
@@ -37,14 +37,14 @@ const AboutUs = () => {
             <div className="col-span-1">
             <h1 className="text-xl text-[#254D4D] font-bold font-roboto pb-2">Sustainable Practices</h1>
             <h1 className="text-lg text-[#254D4D] font-roboto">
-                Many of our products are crafted using sustainable and
+                Many of our products are crafted using sustainable, 
                 eco-friendly manufacturing processes.
               </h1>
             </div>
           </div>
         </div>
-        <div className="col-span-1 hidden xl:block">
-          <img src="/about.png" className="w-full max-h-[460px]" />
+        <div className="col-span-1 hidden lg:block">
+          <img src="/aboutus.jpg" className="w-full max-h-[460px]" />
         </div>
       </div>
     </div>
