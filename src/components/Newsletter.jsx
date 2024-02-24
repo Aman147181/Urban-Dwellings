@@ -3,7 +3,7 @@ import React from "react";
 const Newsletter = () => {
   return (
     <div className="  my-10   px-5 sm:px-12 md:px-16 lg:px-20">
-      <div className="bg-[rgb(37,77,77)] sm:p-[3rem] p-5 rounded-[1.25rem] rounded-tl-[56px] relative  ">
+      <div className="bg-[rgb(37,77,77)] sm:p-[3rem] p-5 py-8 rounded-[1.25rem] rounded-tl-[56px] relative  ">
         <div className=" flex items-center flex-col justify-center w-full">
           <p className="text-white font-roboto text-lg customsm:text-xl sm:text-2xl lg:text-3xl font-[600] text-center mb-[1.5rem] customsm:mb-[2.63rem]">
             Subscribe to get information, latest news and other{" "}
