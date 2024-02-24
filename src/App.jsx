@@ -12,7 +12,7 @@ const App = () => {
     <div className='min-h-screen relative  w-full '>
       
       <Header sidebar={sidebar} setSidebar={setSidebar} />
-      <Sidebar sidebar={sidebar} />
+      <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
       <section id="home">
       <HeroSection />
       </section>

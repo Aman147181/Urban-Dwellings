@@ -2,7 +2,7 @@ import React from "react";
 
 const HotDeals = () => {
   return (
-    <div className="w-full mt-32 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 px-20 ">
+    <div className="w-full customsm:mt-20 mt-10 sm:mt-32 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 px-5 sm:px-12  md:px-16 lg:px-20 ">
       <div className="col-span-1 flex space-y-3 flex-col mr-5">
         <h1 className="text-4xl font-volkhov text-[#254D4D]">
           Hot<br className="hidden xl:block"/> Deals For You

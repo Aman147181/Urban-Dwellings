@@ -11,13 +11,13 @@ const Header = ({sidebar, setSidebar}) => {
       </div>
       
       <div className="md:flex items-center justify-center hidden xl:space-x-12 lg:space-x-8 md:space-x-5 ml-2 font-roboto uppercase text-base text-[#254D4D]">
-        <h1 className="hover:text-[#C14E07]"><a href="#home">home</a></h1>
+        <h1  className="hover:text-[#C14E07]"><a href="#home">home</a></h1>
         <h1 className="hover:text-[#C14E07]"><a href="#about">about</a></h1>
         <h1 className="hover:text-[#C14E07]"><a href="#product">products</a></h1>
         <h1 className="hover:text-[#C14E07]"><a href="#contact">contact</a></h1>
       </div>
       <button className="rounded-full hidden md:block  text-[#254D4D] text-2xl   uppercase  md:hover:text-[#815b44]"><CgProfile /></button>
-      <button className="md:hidden text-[#254D4D]" onClick={() => setSidebar(el => !el)}>{sidebar ? <RxCross2 />:<RxHamburgerMenu /> }</button>
+      <button className="md:hidden text-[#254D4D] text-xl" onClick={() => setSidebar(el => !el)}>{sidebar ? <RxCross2 />:<RxHamburgerMenu /> }</button>
     </div>
   );
 };
