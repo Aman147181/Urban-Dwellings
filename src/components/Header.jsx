@@ -12,7 +12,8 @@ import {
   Card,
   CardBody,
 } from "@nextui-org/react";
-
+import { FiShoppingCart } from "react-icons/fi";
+import { FaRegHeart } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 import { CgProfile } from "react-icons/cg";
@@ -45,12 +46,17 @@ const Header = ({ sidebar, setSidebar }) => {
           <h1 className="hover:text-[#C14E07]">contact</h1>
         </RouterLink>
       </div>
-      <button
-        onClick={onOpen}
-        className="rounded-full hidden md:block  text-[#254D4D] text-2xl   uppercase  md:hover:text-[#815b44]"
-      >
-        <CgProfile />
-      </button>
+      <div className=" flex items-center space-x-4 justify-center text-[#254D4D]">
+        <button><FiShoppingCart/></button>
+        <button><FaRegHeart/></button>
+
+        <button
+          onClick={onOpen}
+          className="rounded-full  uppercase  md:hover:text-[#815b44]"
+        >
+          <CgProfile />
+        </button>
+      </div>
       <button
         className="md:hidden text-[#254D4D] text-xl"
         onClick={() => setSidebar((el) => !el)}
@@ -58,7 +64,7 @@ const Header = ({ sidebar, setSidebar }) => {
         {sidebar ? <RxCross2 /> : <RxHamburgerMenu />}
       </button>
 
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal placement="center" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
