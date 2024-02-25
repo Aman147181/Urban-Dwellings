@@ -4,7 +4,7 @@ const NotFound = () => {
     const navigate = useNavigate();
   return (
     <div className="flex w-full min-h-screen  flex-col items-center justify-center">
-      <div className="flex flex-col space-y-6 customsm:space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
+      <div className="flex flex-col space-y-6 ">
         <h1 className="text-5xl customsm:text-[60px] sm:text-[90px] md:text-[120px] lg:text-[150px]  text-center font-volkhov text-[#345b92]">
           Oops!!
         </h1>
