@@ -285,22 +285,21 @@ const ProductHomePage = () => {
           </h1>
         ))}
       </div>
-      
-        {filteredFurniture.length > 0 && (
-          <div className="w-full grid gap-4 sm:gap-10  grid-cols-1 customsm:grid-cols-2 lg:grid-cols-3 ">
-                  {filteredFurniture?.map((furniture, index) => {
-                     if (index > 4) {
-                        return <></>;
-                      }
-                     else return(
-                          <div className="col-span-1 h-96" key={index}>
-                              <ProductCard furniture={furniture} />
-                          </div>
-                      )
-                  })}
-          </div>
-        )}
-      
+
+      {filteredFurniture.length > 0 && (
+        <div className="w-full grid gap-4 sm:gap-10  grid-cols-1 customsm:grid-cols-2 lg:grid-cols-3 ">
+          {filteredFurniture?.map((furniture, index) => {
+            if (index > 4) {
+              return <></>;
+            } else
+              return (
+                <div className="col-span-1 h-96" key={index}>
+                  <ProductCard furniture={furniture} />
+                </div>
+              );
+          })}
+        </div>
+      )}
     </div>
   );
 };

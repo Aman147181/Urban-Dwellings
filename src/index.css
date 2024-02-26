@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 
-  /* Add this to your CSS */
+/* Add this to your CSS */
 .hover-overlay {
   position: absolute;
   top: 0;
@@ -24,3 +24,9 @@ html {
 .relative:hover .hover-overlay {
   display: flex;
 }
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 4, 1, 0.2);
+}
+
+

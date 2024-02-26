@@ -254,7 +254,7 @@ const Shop = () => {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
-  const [filter, setFilter] = useState(true);
+  const [filter, setFilter] = useState(false);
   useEffect(() => {
     setFilteredFurniture(() =>
       furnitureapi.payload.filter((furniture) => {
@@ -289,20 +289,11 @@ const Shop = () => {
           className="w-full sepia-0 min-h-80 max-h-96 object-cover object-center"
         />
         <div className="flex flex-col items-start space-y-4 absolute top-24 md:top-28 lg:top-32 left-8 sm:left-20 md:left-24 lg:left-28 ">
-          <h1 className=" text-white drop-shadow-xl  leading-[1.2]   text-xl customsm:text-2xl md:text-3xl lg:text-4xl font-volkhov ">
+          <h1 className=" text-white  text-shadow  leading-[1.2]   text-xl customsm:text-2xl md:text-3xl lg:text-4xl font-volkhov ">
             Our goods have the best
             <br /> quality and material in Kathmandu
           </h1>
-          <button
-            onClick={() =>
-              window.scroll({
-                top: 430,
-              })
-            }
-            className="bg-orange-700 font-roboto rounded-md hover:bg-orange-600 text-xs sm:text-base text-white px-6 py-2 uppercase"
-          >
-            shop now
-          </button>
+         
         </div>
       </div>
       <div className="flex flex-col w-full mt-10 space-y-5">
@@ -311,12 +302,12 @@ const Shop = () => {
             className="text-xl text-[#062338] flex hover:cursor-pointer items-center space-x-2 "
             onClick={() => setFilter((el) => !el)}
           >
-            <h1>filter</h1> {filter ? <RiFilterOffFill /> : <RiFilterFill />}
+            <h1 className="font-roboto font-medium">Filter</h1> {filter ? <RiFilterOffFill /> : <RiFilterFill />}
           </div>
         </div>
         <div className="grid grid-cols-3 md:grid-cols-4 w-full gap-6 relative sm:gap-10 px-5 sm:px-12 md:px-16  lg:px-20">
           <div
-            className={`absolute bg-white z-10 flex w-60 pt-0 p-10 md:hidden flex-col transform transition-transform duration-500 ease-in-out ${
+            className={`absolute bg-white z-10 flex w-60 pt-0 p-12 pr-6 border-slate-200 border border-t-0 rounded-b-md shadow-md md:hidden flex-col transform transition-transform duration-500 ease-in-out ${
               filter ? "translate-x-0" : "-translate-x-full"
             }`}
           >
