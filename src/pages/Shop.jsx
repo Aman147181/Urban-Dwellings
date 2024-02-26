@@ -250,7 +250,6 @@ const Shop = () => {
   const [filteredFurniture, setFilteredFurniture] = useState([]);
   const [furnituresPerPage] = useState(3);
 
-  // run every time the page number and the packages changes
   useEffect(() => {
     window.scroll(0, 0);
   }, []);

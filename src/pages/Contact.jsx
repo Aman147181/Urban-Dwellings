@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Newsletter from "../components/Newsletter";
 const Contact = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const FAQ = [
     {
       title: "How to buy a product?",
