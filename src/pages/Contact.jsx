@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Newsletter from "../components/Newsletter";
 const Contact = () => {
