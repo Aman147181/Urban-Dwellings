@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 const App = () => {
   const [sidebar, setSidebar] = useState(false);
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
+      <Footer/>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Header = ({ sidebar, setSidebar }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [selected, setSelected] = React.useState("login");
   return (
-    <div className="fixed top-0 h-[72px] bg-white z-10 w-full px-5 sm:px-12 md:px-16 lg:px-20 flex items-center justify-between text-base">
+    <div className="fixed top-0 h-[72px] bg-white z-50 w-full px-5 sm:px-12 md:px-16 lg:px-20 flex items-center justify-between text-base">
       <RouterLink to="/">
         {" "}
         <div className="flex justify-center space-x-2 items-center">
@@ -46,7 +46,7 @@ const Header = ({ sidebar, setSidebar }) => {
           <h1 className="hover:text-[#C14E07]">contact</h1>
         </RouterLink>
       </div>
-      <div className=" flex items-center space-x-4 justify-center text-[#254D4D]">
+      <div className=" flex items-center space-x-1 sm:space-x-3 justify-center text-[#254D4D]">
         <button><FiShoppingCart/></button>
         <button><FaRegHeart/></button>
 
@@ -93,12 +93,12 @@ const Header = ({ sidebar, setSidebar }) => {
                         />
                         <p className="text-center text-small">
                           Need to create an account?{" "}
-                          <nextLink
+                          <Link
                             size="sm"
                             onPress={() => setSelected("sign-up")}
                           >
                             Sign up
-                          </nextLink>
+                          </Link>
                         </p>
                         <div className="flex gap-2 justify-end">
                           <Button fullWidth color="primary">
