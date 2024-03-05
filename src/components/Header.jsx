@@ -46,7 +46,7 @@ const Header = ({ sidebar, setSidebar }) => {
           <h1 className="hover:text-[#C14E07]">contact</h1>
         </RouterLink>
       </div>
-      <div className=" flex items-center space-x-1 sm:space-x-3 justify-center text-[#254D4D]">
+      <div className=" flex items-center space-x-2 sm:space-x-3 justify-center text-[#254D4D]">
         <button><FiShoppingCart/></button>
         <button><FaRegHeart/></button>
 
