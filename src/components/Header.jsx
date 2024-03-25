@@ -16,7 +16,8 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
-import { CgProfile } from "react-icons/cg";
+import { FaUser } from "react-icons/fa";
+
 import { Link as RouterLink } from "react-router-dom";
 
 const Header = ({ sidebar, setSidebar }) => {
@@ -54,7 +55,7 @@ const Header = ({ sidebar, setSidebar }) => {
           onClick={onOpen}
           className="rounded-full  uppercase  md:hover:text-[#815b44]"
         >
-          <CgProfile />
+          <FaUser />
         </button>
       </div>
       <button
@@ -64,11 +65,11 @@ const Header = ({ sidebar, setSidebar }) => {
         {sidebar ? <RxCross2 /> : <RxHamburgerMenu />}
       </button>
 
-      <Modal placement="center" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal placement="center" size="sm" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
-              <Card className="max-w-full">
+              <Card className="max-w-full pb-10">
                 <CardBody className="overflow-hidden">
                   <Tabs
                     fullWidth
@@ -94,6 +95,7 @@ const Header = ({ sidebar, setSidebar }) => {
                         <p className="text-center text-small">
                           Need to create an account?{" "}
                           <Link
+                            className="hover:cursor-pointer"
                             size="sm"
                             onPress={() => setSelected("sign-up")}
                           >
@@ -129,7 +131,7 @@ const Header = ({ sidebar, setSidebar }) => {
                         />
                         <p className="text-center text-small">
                           Already have an account?{" "}
-                          <Link size="sm" onPress={() => setSelected("login")}>
+                          <Link className="hover:cursor-pointer" size="sm" onPress={() => setSelected("login")}>
                             Login
                           </Link>
                         </p>

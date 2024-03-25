@@ -248,11 +248,11 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [furnitureToShow, setFurnitureToShow] = useState([]);
   const [filteredFurniture, setFilteredFurniture] = useState([]);
-  const [furnituresPerPage] = useState(3);
+  const [furnituresPerPage] = useState(6);
 
   useEffect(() => {
     window.scroll(0, 0);
-  }, []);
+  }, [currentPage]);
   const [filter, setFilter] = useState(false);
   useEffect(() => {
     setFilteredFurniture(() =>
@@ -281,27 +281,15 @@ const Shop = () => {
     setCurrentPage(1);
   }, [value]);
   return (
-    <div className="py-20 pb-5 sm:pt-28">
-      <div className="w-full flex flex-col px-5 relative sm:px-12 md:px-16 lg:px-20">
-        <img
-          src="/shop.jpg"
-          className="w-full sepia-0 min-h-80 max-h-96 object-cover object-center"
-        />
-        <div className="flex flex-col items-start space-y-4 absolute top-24 md:top-28 lg:top-32 left-8 sm:left-20 md:left-24 lg:left-28 ">
-          <h1 className=" text-white  text-shadow  leading-[1.2]   text-xl customsm:text-2xl md:text-3xl lg:text-4xl font-volkhov ">
-            Our goods have the best
-            <br /> quality and material in Kathmandu
-          </h1>
-         
-        </div>
-      </div>
+    <div className="py-20 pb-5 min-h-screen">
       <div className="flex flex-col w-full mt-10 space-y-5">
         <div className="flex justify-between w-full items-center md:hidden  px-5 sm:px-12">
           <div
             className="text-xl text-[#062338] flex hover:cursor-pointer items-center space-x-2 "
             onClick={() => setFilter((el) => !el)}
           >
-            <h1 className="font-roboto font-medium">Filter</h1> {filter ? <RiFilterOffFill /> : <RiFilterFill />}
+            <h1 className="font-roboto font-medium">Filter</h1>{" "}
+            {filter ? <RiFilterOffFill /> : <RiFilterFill />}
           </div>
         </div>
         <div className="grid grid-cols-3 md:grid-cols-4 w-full gap-6 relative sm:gap-10 px-5 sm:px-12 md:px-16  lg:px-20">
@@ -346,47 +334,49 @@ const Shop = () => {
             </div>
           </div>
           <div className="md:col-span-1 max-w-64 md:block hidden ">
-            <h1 className="font-roboto font-semibold text-[#062338] mb-2">
-              Filter By Price (Nrs)
-            </h1>
-            <Slider
-              disableThumbScale={true}
-              showTooltip={true}
-              size="md"
-              step={100}
-              maxValue={100000}
-              minValue={0}
-              value={value}
-              onChange={setValue}
-              className="max-w-sm"
-            />
-            <h1 className="font-roboto font-semibold text-[#062338] mt-5 mb-2">
-              Product Category
-            </h1>
-            <div className="flex flex-col w-full">
-              {categoryArray.map((el) => (
-                <h1
-                  onClick={() => {
-                    setSelectedCategory((a) => el);
-                    setCurrentPage(1);
-                  }}
-                  className={
-                    selectedCategory == el
-                      ? "text-[#254D4D] font-medium hover:cursor-pointer"
-                      : "text-slate-400 hover:cursor-pointer"
-                  }
-                >
-                  {el}
-                </h1>
-              ))}
+            <div className="w-full fixed max-w-[170px] lg:max-w-56 xl:max-w-64 top-32 px-2">
+              <h1 className="font-roboto font-semibold text-[#062338] mb-2">
+                Filter By Price (Nrs)
+              </h1>
+              <Slider
+                disableThumbScale={true}
+                showTooltip={true}
+                size="md"
+                step={100}
+                maxValue={100000}
+                minValue={0}
+                value={value}
+                onChange={setValue}
+                className="max-w-sm"
+              />
+              <h1 className="font-roboto font-semibold text-[#062338] mt-5 mb-2">
+                Product Category
+              </h1>
+              <div className="flex flex-col w-full">
+                {categoryArray.map((el) => (
+                  <h1
+                    onClick={() => {
+                      setSelectedCategory((a) => el);
+                      setCurrentPage(1);
+                    }}
+                    className={
+                      selectedCategory == el
+                        ? "text-[#254D4D] font-medium hover:cursor-pointer"
+                        : "text-slate-400 hover:cursor-pointer"
+                    }
+                  >
+                    {el}
+                  </h1>
+                ))}
+              </div>
             </div>
           </div>
 
           {filteredFurniture.length > 0 && (
             <div className="col-span-3 flex flex-col items-center  space-y-3">
-              <div className="col-span-3 h-96 overflow-y-auto grid gap-4 sm:gap-10  grid-cols-1 customsm:grid-cols-2 xl:grid-cols-3">
+              <div className="  w-full grid gap-4 sm:gap-10  grid-cols-1 customsm:grid-cols-2 xl:grid-cols-3">
                 {furnitureToShow?.map((furniture, index) => (
-                  <div className="col-span-1 h-96" key={index}>
+                  <div className="col-span-1  h-96" key={index}>
                     <ProductCard furniture={furniture} />
                   </div>
                 ))}

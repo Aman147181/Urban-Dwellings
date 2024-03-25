@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Newsletter from "../components/Newsletter";
 const Contact = () => {
@@ -52,19 +52,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-10">
-      <div className="w-full flex flex-col px-5 relative sm:px-12 md:px-16 lg:px-20">
-        <img
-          src="/shop.jpg"
-          className="w-full sepia-0 min-h-80 max-h-96 object-cover object-center"
-        />
-        <div className="h-full absolute top-0 "></div>
-        <div className="flex flex-col items-start space-y-4 absolute top-24 md:top-28 lg:top-32 left-8 sm:left-20 md:left-24 lg:left-28 ">
-          <h1 className=" text-white text-shadow   leading-[1.2]   text-xl customsm:text-2xl md:text-3xl lg:text-4xl font-volkhov ">
-            Our goods have the best
-            <br /> quality and material in Kathmandu
-          </h1>
-        </div>
+    <div className="min-h-screen pt-20 pb-5">
+      <div className="flex w-full items-center flex-col justify-center">
+        <h1 className="text-black font-volkhov font-medium px-2  text-5xl">Get in Touch</h1>
+        <h1 className="text-xl font-roboto font-normal px-5 pt-2 pb-5">If you have any questions, comments, or inquiries, feel free to reach out to us.
+          Our dedicated team is ready to assist you in any way we can.</h1>
       </div>
       <div className="grid customsm:grid-cols-2 grid-cols-1 w-full mt-20 px-5 sm:px-12 md:px-16 lg:px-20 customsm:gap-10  sm:gap-16">
         <div className="col-span-1 text-[#062338] font-roboto ">
@@ -129,14 +121,14 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-[#092635] text-white px-8 py-2 rounded-sm hover:bg-slate-800"
+              className="bg-[#092635] text-white px-8 py-2 rounded-sm hover:text-[#092635] hover:text-medium hover:bg-slate-200 border-[#092635] border-[1px] duration-300"
             >
               Submit
             </button>
           </form>
         </div>
       </div>
-      <Newsletter/>
+      <Newsletter />
     </div>
   );
 };
