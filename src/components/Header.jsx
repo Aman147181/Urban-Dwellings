@@ -115,7 +115,7 @@ const Header = ({ sidebar, setSidebar }) => {
                           isRequired
                           label="Name"
                           placeholder="Enter your name"
-                          type="password"
+                          type="text"
                         />
                         <Input
                           isRequired
