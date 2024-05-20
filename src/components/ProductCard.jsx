@@ -1,6 +1,5 @@
 import React from "react";
-import { FiShoppingCart } from "react-icons/fi";
-import { FaRegHeart } from "react-icons/fa";
+
 
 const ProductCard = ({ furniture }) => {
   return (
@@ -11,14 +10,6 @@ const ProductCard = ({ furniture }) => {
         <p className="text-sm text-white font-roboto font-bold">{"Nrs. "}{furniture.price}</p>
       </div>
       <img src={furniture.img_link} className=" w-full h-full object-center object-cover" alt={furniture.name} />
-      <div className="absolute top-1/3 right-3 flex items-center justify-center flex-col space-y-2 text-sm">
-        <div className="bg-[#062338] w-7 h-7 text-white rounded-full flex items-center justify-center">
-          <FaRegHeart />
-        </div>
-        <div className="bg-orange-100 w-7 h-7 text-[#062338] rounded-full flex items-center justify-center">
-          <FiShoppingCart />
-        </div>
-      </div>
     </div>
   );
 };

@@ -8,11 +8,11 @@ const NoProductsFound = () => {
           Oops!!
         </h1>
         <h1 className="uppercase text-center text-xl sm:text-2xl font-roboto font-bold">
-          No Products Found
+          No Product Found
         </h1>
       </div>
       <h1 className=" text-center px-5 text-[#254D4D] text-base sm:text-xl mt-8  customsm:mt-10 sm:mt-16 font-roboto ">
-        Your search did not match any product. please try again.
+        Your search did not match any Product. please try again.
       </h1>
      
     </div>

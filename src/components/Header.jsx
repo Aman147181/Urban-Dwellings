@@ -39,9 +39,9 @@ const Header = ({ sidebar, setSidebar }) => {
         <RouterLink to="/">
           <h1 className="hover:text-[#C14E07]">home</h1>
         </RouterLink>
-        <RouterLink to="/shop">
+        <RouterLink to="/products">
           {" "}
-          <h1 className="hover:text-[#C14E07]">shop</h1>
+          <h1 className="hover:text-[#C14E07]">product</h1>
         </RouterLink>
         <RouterLink to="/contact">
           <h1 className="hover:text-[#C14E07]">contact</h1>
@@ -49,7 +49,7 @@ const Header = ({ sidebar, setSidebar }) => {
       </div>
       <div className=" flex items-center space-x-2 sm:space-x-3 justify-center text-[#254D4D]">
         <button><FiShoppingCart/></button>
-        <button><FaRegHeart/></button>
+   
 
         <button
           onClick={onOpen}
