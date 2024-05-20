@@ -251,7 +251,7 @@ const ProductPage = () => {
         </div>
         <div className="col-span-1 flex items-start flex-col space-y-6 justify-center">
           <h1 className="font-volkhov text-green-950 text-2xl md:text-4xl">
-            {product?.name}
+            {product?.id}
           </h1>
           <h1 className="font-roboto text-gray-950 text-xl md:text-2xl">
             {product?.description}
