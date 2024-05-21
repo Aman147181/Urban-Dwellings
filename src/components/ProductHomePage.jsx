@@ -260,7 +260,7 @@ const ProductHomePage = () => {
         </h1>
         <div
           className=" text-[#254D4D] bg-gradient-to-r from-slate-100  via-slate-50 hover:font-medium hover:cursor-pointer to-white space-x-2 rounded-lg px-6 py-1 flex items-center "
-          onClick={() => navigate("/product")}
+          onClick={() => navigate("/products")}
         >
           <h1>See All</h1>{" "}
           <h1 className="text-base customsm:text-xl sm:text-3xl">
