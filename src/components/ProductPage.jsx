@@ -234,7 +234,7 @@ const ProductPage = () => {
   };
   const [product, setProduct] = useState(null);
   const { name } = useParams();
-  const [quantity,setQuantity] = useState(0);
+  const [quantity,setQuantity] = useState(1);
 
   useEffect(() => {
     if (furnitureapi?.payload) {
@@ -246,7 +246,7 @@ const ProductPage = () => {
       const cartItem = cart.find((item) => item.product.id === name);
 
      
-      setQuantity(cartItem ? cartItem.quantity : 0);
+      setQuantity(cartItem ? cartItem.quantity : 1);
     }
   }, [name]);
   return (
