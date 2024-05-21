@@ -1,28 +1,11 @@
 import React from "react";
-import {
-  Modal,
-  ModalContent,
-  ModalBody,
-  useDisclosure,
-  Tabs,
-  Tab,
-  Input,
-  Link,
-  Button,
-  Card,
-  CardBody,
-} from "@nextui-org/react";
-import { FiShoppingCart } from "react-icons/fi";
-import { FaRegHeart } from "react-icons/fa";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
-import { FaUser } from "react-icons/fa";
-
-import { Link as RouterLink } from "react-router-dom";
+import CartComponent from "./Cart";
+import {  Link as RouterLink } from "react-router-dom";
 
 const Header = ({ sidebar, setSidebar }) => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [selected, setSelected] = React.useState("login");
   return (
     <div className="fixed top-0 h-[72px] bg-white z-50 w-full px-5 sm:px-12 md:px-16 lg:px-20 flex items-center justify-between text-base">
       <RouterLink to="/">
@@ -48,15 +31,7 @@ const Header = ({ sidebar, setSidebar }) => {
         </RouterLink>
       </div>
       <div className=" flex items-center space-x-2 sm:space-x-3 justify-center text-[#254D4D]">
-        <button><FiShoppingCart/></button>
-   
-
-        <button
-          onClick={onOpen}
-          className="rounded-full  uppercase  md:hover:text-[#815b44]"
-        >
-          <FaUser />
-        </button>
+      <CartComponent/>
       </div>
       <button
         className="md:hidden text-[#254D4D] text-xl"
@@ -65,90 +40,7 @@ const Header = ({ sidebar, setSidebar }) => {
         {sidebar ? <RxCross2 /> : <RxHamburgerMenu />}
       </button>
 
-      <Modal placement="center" size="sm" isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <Card className="max-w-full pb-10">
-                <CardBody className="overflow-hidden">
-                  <Tabs
-                    fullWidth
-                    size="md"
-                    aria-label="Tabs form"
-                    selectedKey={selected}
-                    onSelectionChange={setSelected}
-                  >
-                    <Tab key="login" title="Login">
-                      <form className="flex flex-col gap-4">
-                        <Input
-                          isRequired
-                          label="Email"
-                          placeholder="Enter your email"
-                          type="email"
-                        />
-                        <Input
-                          isRequired
-                          label="Password"
-                          placeholder="Enter your password"
-                          type="password"
-                        />
-                        <p className="text-center text-small">
-                          Need to create an account?{" "}
-                          <Link
-                            className="hover:cursor-pointer"
-                            size="sm"
-                            onPress={() => setSelected("sign-up")}
-                          >
-                            Sign up
-                          </Link>
-                        </p>
-                        <div className="flex gap-2 justify-end">
-                          <Button fullWidth color="primary">
-                            Login
-                          </Button>
-                        </div>
-                      </form>
-                    </Tab>
-                    <Tab key="sign-up" title="Sign up">
-                      <form className="flex flex-col gap-4 h-[300px]">
-                        <Input
-                          isRequired
-                          label="Name"
-                          placeholder="Enter your name"
-                          type="text"
-                        />
-                        <Input
-                          isRequired
-                          label="Email"
-                          placeholder="Enter your email"
-                          type="email"
-                        />
-                        <Input
-                          isRequired
-                          label="Password"
-                          placeholder="Enter your password"
-                          type="password"
-                        />
-                        <p className="text-center text-small">
-                          Already have an account?{" "}
-                          <Link className="hover:cursor-pointer" size="sm" onPress={() => setSelected("login")}>
-                            Login
-                          </Link>
-                        </p>
-                        <div className="flex gap-2 justify-end">
-                          <Button fullWidth color="primary">
-                            Sign up
-                          </Button>
-                        </div>
-                      </form>
-                    </Tab>
-                  </Tabs>
-                </CardBody>
-              </Card>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+     
     </div>
   );
 };

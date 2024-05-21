@@ -1,9 +1,8 @@
 import React from "react";
-import { Image } from "@nextui-org/react";
 const HeroSection = () => {
   return (
     <div className="relative  sm:pl-56 lg:pl-72 xl:pl-96">
-      <Image src="/dotGrid.png" className="absolute top-32 sm:left-12 md:left-16 lg:left-20 hidden sm:block"/>
+      <img src="/dotGrid.png"  className="absolute top-32 sm:left-12 md:left-16 lg:left-20 hidden sm:block"/>
       <div
         className="w-full h-[600px] sm:h-[860px] pt-20 bg-no-repeat sm:bg-cover bg-center bg-cover   "
         style={{ backgroundImage: "url( /banner.jpg )" }}

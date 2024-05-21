@@ -4,10 +4,14 @@ import App from "./App.jsx";
 import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Router>
-    <NextUIProvider>
-      <App />
-    </NextUIProvider>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <NextUIProvider>
+        <App />
+      </NextUIProvider>
+    </Router>
+  </Provider>
 );

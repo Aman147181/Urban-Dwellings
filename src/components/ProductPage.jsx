@@ -1,8 +1,11 @@
 import { Input } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { addToCart, deleteFromCart } from "../app/features/cartSlice";
+import { useSelector, useDispatch } from 'react-redux'
 const ProductPage = () => {
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart.value)
   const furnitureapi = {
     payload: [
       {
@@ -231,6 +234,7 @@ const ProductPage = () => {
   };
   const [product, setProduct] = useState(null);
   const { name } = useParams();
+  const [quantity,setQuantity] = useState(0);
 
   useEffect(() => {
     if (furnitureapi?.payload) {
@@ -238,8 +242,13 @@ const ProductPage = () => {
         (product) => product.id === name
       );
       setProduct(foundProduct || null);
+
+      const cartItem = cart.find((item) => item.product.id === name);
+
+     
+      setQuantity(cartItem ? cartItem.quantity : 0);
     }
-  }, []);
+  }, [name]);
   return (
     <div className="min-h-screen p-32 px-6 sm:px-12 md:px-16 lg:px-20 ">
       <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-16">
@@ -263,16 +272,21 @@ const ProductPage = () => {
           <div className="flex w-full  max-w-[400px] items-center justify-start space-x-3">
             <Input
               label="Quantity"
-              min={0}
+              isClearable
+              min={1}
               size="sm"
-              placeholder="0"
+              placeholder="1"
               labelPlacement="inside"
               type="number"
+              value={quantity}
+              onValueChange={setQuantity}
             />
 
-            <div className="flex items-center justify-center h-10 rounded-full min-w-[140px] bg-black text-white transition hover:bg-white border-black border hover:text-black">
+            <button disabled={quantity==0} onClick={() => dispatch(addToCart({ product, quantity }))} className="flex disabled:opacity-80 disabled:pointer-events-none items-center justify-center h-10 rounded-full min-w-[140px] bg-black text-white transition hover:bg-white hover:border-black hover:border hover:text-black">
               add to cart
-            </div>
+            </button>
+           
+            {console.log(cart)}
           </div>
         </div>
       </div>
