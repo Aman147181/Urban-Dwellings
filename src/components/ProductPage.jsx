@@ -2,10 +2,11 @@ import { Input } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { addToCart, deleteFromCart } from "../app/features/cartSlice";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
+import ProductCard from "./ProductCard";
 const ProductPage = () => {
-  const dispatch = useDispatch()
-  const cart = useSelector((state) => state.cart.value)
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.value);
   const furnitureapi = {
     payload: [
       {
@@ -234,7 +235,7 @@ const ProductPage = () => {
   };
   const [product, setProduct] = useState(null);
   const { name } = useParams();
-  const [quantity,setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     if (furnitureapi?.payload) {
@@ -245,7 +246,6 @@ const ProductPage = () => {
 
       const cartItem = cart.find((item) => item.product.id === name);
 
-     
       setQuantity(cartItem ? cartItem.quantity : 1);
     }
   }, [name]);
@@ -282,13 +282,27 @@ const ProductPage = () => {
               onValueChange={setQuantity}
             />
 
-            <button disabled={quantity==0} onClick={() => dispatch(addToCart({ product, quantity }))} className="flex disabled:opacity-80 disabled:pointer-events-none items-center justify-center h-10 rounded-full min-w-[140px] bg-black text-white transition hover:bg-white hover:border-black hover:border hover:text-black">
+            <button
+              disabled={quantity == 0}
+              onClick={() => dispatch(addToCart({ product, quantity }))}
+              className="flex disabled:opacity-80 disabled:pointer-events-none items-center justify-center h-10 rounded-full min-w-[140px] bg-black text-white transition hover:bg-white hover:border-black hover:border hover:text-black"
+            >
               add to cart
             </button>
-           
+
             {console.log(cart)}
           </div>
         </div>
+      </div>
+      <h1 className="pt-20 text-5xl font-serif">Similar Products</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 pt-12  gap-12 w-full">
+        {furnitureapi.payload
+          .filter(
+            (el) => el?.type === product?.type && el?.name != product?.name
+          )
+          .map((furniture) => (
+            <ProductCard key={furniture.id} furniture={furniture} />
+          ))}
       </div>
     </div>
   );

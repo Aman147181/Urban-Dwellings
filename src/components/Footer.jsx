@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           
           <div className="hover:text-white text-base hover:pl-2 duration-300">
-            <Link to="/shop">Shop</Link>
+            <Link to="/products">Product</Link>
           </div>
           <div className="hover:text-white text-base hover:pl-2 duration-300">
             <Link to="/contact">Contact us</Link>

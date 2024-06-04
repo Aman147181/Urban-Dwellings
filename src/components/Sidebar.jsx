@@ -13,8 +13,8 @@ const Sidebar = ({ sidebar, setSidebar }) => {
           <Link to="/">
             <h1 onClick={() => setSidebar(false)}>home</h1>
           </Link>
-          <Link to="/shop">
-            <h1 onClick={() => setSidebar(false)}>shop</h1>
+          <Link to="/products">
+            <h1 onClick={() => setSidebar(false)}>product</h1>
           </Link>
           <Link to="/contact">
             <h1 onClick={() => setSidebar(false)}>contact</h1>

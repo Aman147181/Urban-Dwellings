@@ -41,7 +41,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="bg-slate-50 md:mx-20 mx-5 mb-10 py-10">
+    <section className=" md:mx-20 mx-5 mb-10 py-10">
       <h3 className=" text-center text-[#254D4D] text-4xl font-bold">
         What Our
         <span className="text-[#C14E07]"> Customers </span>

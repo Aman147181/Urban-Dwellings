@@ -34,7 +34,7 @@ const CartComponent = () => {
       <Modal
         isDismissable={true}
         size="3xl"
-        placement="top-center"
+        placement="center"
         className="max-h-[500px] pb-10 overflow-y-auto"
         isOpen={isOpen}
         onOpenChange={onOpenChange}

@@ -3,7 +3,7 @@ import React from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 import CartComponent from "./Cart";
-import {  Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 const Header = ({ sidebar, setSidebar }) => {
   return (
@@ -30,17 +30,15 @@ const Header = ({ sidebar, setSidebar }) => {
           <h1 className="hover:text-[#C14E07]">contact</h1>
         </RouterLink>
       </div>
-      <div className=" flex items-center space-x-2 sm:space-x-3 justify-center text-[#254D4D]">
-      <CartComponent/>
-      </div>
+      <div className=" flex items-center space-x-3 sm:space-x-3 justify-center text-[#254D4D]">
+        <CartComponent />
+     
       <button
         className="md:hidden text-[#254D4D] text-xl"
         onClick={() => setSidebar((el) => !el)}
       >
         {sidebar ? <RxCross2 /> : <RxHamburgerMenu />}
-      </button>
-
-     
+      </button> </div>
     </div>
   );
 };
